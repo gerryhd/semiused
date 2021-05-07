@@ -1,0 +1,15 @@
+<%= form_with(model: @car) do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name, required: true %>
+
+  <%= form.label :release_date %>
+  <%= form.date_field :release_date, required: true %>
+
+  <%= form.label :original_price %>
+  <%= form.number_field :original_price, required: true %>
+
+  <%= form.label :photo %>
+  <%= form.file_field :photo %>
+
+  <%= form.submit %>
+<% end %>

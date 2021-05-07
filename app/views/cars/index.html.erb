@@ -1,0 +1,9 @@
+<% if current_user.admin? %>
+  <%= link_to "Crear carro", new_car_path %>
+<% end %>
+<% @cars.each do |car| %>
+  <div>
+    <h3><%= car.name.titleize %> <%= car.release_date.year %><small> | <%= link_to("Delete", car_path(car), method: "DELETE") if current_user.admin? %></small></h3>
+    <p><strong>Price: </strong> <%= number_to_currency(car.price) %></p>
+  </div>
+<% end %>
