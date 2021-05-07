@@ -5,5 +5,6 @@
   <div>
     <h3><%= car.name.titleize %> <%= car.release_date.year %><small> | <%= link_to("Delete", car_path(car), method: "DELETE") if current_user.admin? %></small></h3>
     <p><strong>Price: </strong> <%= number_to_currency(car.price) %></p>
+    <p><strong>Available at: </strong/> <%= car.car_listings.map(&:dealership).uniq.map(&:name).join(", ") %></p>
   </div>
 <% end %>
