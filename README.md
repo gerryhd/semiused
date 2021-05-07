@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Ruby version
+ruby 2.7.0p0
 
-Things you may want to cover:
+## Rails version
+Rails 6.1.3.2
 
-* Ruby version
+## How to run
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. Clone into your local environment.
+2. `cd` into the directory and `bundle install`
+3. Run `bundle exec rails s`
+4. Run tests by running `rspec`
