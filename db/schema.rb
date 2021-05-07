@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_07_032034) do
+ActiveRecord::Schema.define(version: 2021_05_07_045519) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -40,11 +40,27 @@ ActiveRecord::Schema.define(version: 2021_05_07_032034) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "car_listings", force: :cascade do |t|
+    t.integer "car_id"
+    t.integer "dealership_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["car_id"], name: "index_car_listings_on_car_id"
+    t.index ["dealership_id"], name: "index_car_listings_on_dealership_id"
+  end
+
   create_table "cars", force: :cascade do |t|
     t.string "name"
     t.datetime "release_date"
     t.decimal "original_price"
     t.string "condition"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "dealerships", force: :cascade do |t|
+    t.string "name"
+    t.string "location"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -1,7 +1,9 @@
 class Car < ApplicationRecord
+  has_many :car_listings
+  has_many :dealerships, through: :car_listings
   has_one_attached :photo, dependent: :destroy
   
-  enum condition: HashWithIndifferentAccess.new(new: "new", used: "used")
+  enum condition: HashWithIndifferentAccess.new(brand_new: "brand_new", used: "used")
 
   def current_price
     price = original_price
